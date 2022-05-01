@@ -9,16 +9,6 @@ Pull latest list files from a designated directory within a repo as a checklist 
 * GitHub Access Token
 * Variable substitution which provides a repo name and release tag using [semantic versioning](https://semver.org/)
 
-#### Active Choices Reactive Parameter
-```
-def proc = "/bin/bash /var/lib/jenkins/multiselect_json_create/multi_selector_json.sh ${git_repo_url} ${git_release}".execute()
-proc.waitFor()
-def output = proc.in.text
-def exitcode = proc.exitValue()
-def error = proc.err.text
-return output.tokenize()
-```
-
 #### Usage
 * Edit the script to include an `auth.cfg` for referencing a GitHub token assigned to the `gitauthtoken` variable. 
 * The 'auth.cfg' file should be part of the `.gitignore` config.
@@ -31,3 +21,13 @@ return output.tokenize()
 #### Example
 * Parse list of files from the FooBar repo's directory release v1.1.2
   * `multi_selector_json.sh git@github.com:Adam-Lechnos/FooBart.git v0.0.1`
+
+#### Active Choices Reactive Parameter
+```
+def proc = "/bin/bash /var/lib/jenkins/multiselect_json_create/multi_selector_json.sh ${git_repo_url} ${git_release}".execute()
+proc.waitFor()
+def output = proc.in.text
+def exitcode = proc.exitValue()
+def error = proc.err.text
+return output.tokenize()
+```
