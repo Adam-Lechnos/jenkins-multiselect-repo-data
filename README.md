@@ -18,4 +18,4 @@ Pull latest list files from a designated directory within a repo as a checklist 
 
 #### Example
 * Parse list of files from the FooBar repo's directory release v1.1.2
-  * `multi_selector_json.sh git@github.com:Adam-Lechnos/FooBart.git v.0.0.1`
+  * `multi_selector_json.sh git@github.com:Adam-Lechnos/FooBart.git v0.0.1`
